@@ -2,7 +2,7 @@
 
 [Click here to return to README.MD file](../README.md)
 
-<i>I tried to use different ways to achieve elements. E.g., most Amazon elements have IDs properties. Sometimes, I avoid it, especially because wanted more practice.</i>
+<i>I tried to use different ways to achieve elements. E.g., most Amazon elements have IDs properties. Sometimes, I avoid it, especially because wanted more practice using other ways.</i>
 
 All XPaths were written in ECMAScript 6 (JavaScript) format.
 
