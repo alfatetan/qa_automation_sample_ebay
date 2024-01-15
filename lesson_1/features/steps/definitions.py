@@ -2,7 +2,6 @@
 
 from behave import step
 from selenium import webdriver
-from time import sleep
 
 
 @step('Navigate to Google')
