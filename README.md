@@ -50,4 +50,12 @@ webdriver-manager==4.0.1
 wsproto==1.2.0
 ```
 
-### See my homework on the XPath search lesson_1/homework.md or click the link here. [My XPaths](/lesson_1/homework.md)
+Result of the first test execution:
+
+![First Test Execution](./readme_makeup/images/test_lesson_1_result.jpg)
+
+#### See my homework on the XPath search ./lesson_1/homework.md or [click the link here](/lesson_1/homework.md)
+
+---
+
+### Thank you for taking the time and attention to my work.

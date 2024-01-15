@@ -9,4 +9,3 @@ from time import sleep
 def test(context):
    driver = webdriver.Chrome()
    driver.get("https://www.google.com/")
-   sleep(3)
