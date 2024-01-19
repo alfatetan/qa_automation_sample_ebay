@@ -40,6 +40,10 @@ def switch_browsers_tab(browser):
 
 @step('Product customization dropdown elements randomly selected')
 def select_dropdown_elements(browser):
+    """
+    Sometimes we should select several elements to make a purchase
+    This function find and fill all from dropdowns fields
+    """
     select_elements = browser.driver.find_elements(By.XPATH, '//select[@class="x-msku__select-box"]')
     for element in select_elements:
         select = Select(element)
