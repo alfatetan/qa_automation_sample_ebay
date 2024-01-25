@@ -4,7 +4,7 @@
 
 - [ ] eBay item filters - follow the class on xpath grouping for widgets
       Xpath brainteasers:
-- [ ] register with any mail at http://www.old.practicalsqa.net/
+- [x] register with any mail at http://www.old.practicalsqa.net/
       go to Brainteasers from top menu
       NOTE: "" (double quotes not needed there)
 
