@@ -166,3 +166,5 @@ launch.json
 
 # Additional
 .temp/
+.DS_Store
+github_link.txt

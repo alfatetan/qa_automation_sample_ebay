@@ -83,7 +83,7 @@ Practical SQA paths are:
 # Perhaps, I solved this problem incorrect. I googled and found a XPath function as "count()" returns a count of elements. However I didn't find the way to use it. I solved a problem use more devious way. My logic were: if the list don't have 3rd element it wouldn't show up. Could you say is it correct or not? Or I should find a way to use the "count()" function?
 ```
 
-- [x] :question: Finding Sibling Elements
+- [x] Finding Sibling Elements
 
 ```py
 # Q. I am positioned in the node[@id='1']. I need an Xpath to match all the elements until the next not empty node (here node[@id='2'])
