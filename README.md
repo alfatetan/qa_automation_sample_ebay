@@ -16,6 +16,8 @@ _UPDATED 01/25/2024 12:00am_
 
 ### [Lesson 4](/lesson_4/homework.md) January 22, 2024 (Monday)
 
+### [Lesson 5](/lesson_5/homework.md) January 25, 2024 (Thursday)
+
 ---
 
 ### Thank you for taking the time and attention to my work.

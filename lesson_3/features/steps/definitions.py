@@ -12,9 +12,11 @@ class Links:
     @staticmethod
     def top_menu(menu_item):
         return f'//div[@id="gh-top"]/ul/li/descendant::a[contains(text(), "{menu_item}")]'
+    
     # @staticmethod
-    # def links_list():
-    #     return f'//div[@id="gh-top"]/ul/descendant::li/a[not(text()="")]'
+    def links_list(content):
+        all_links_elements = content.driver.find_elements(By.XPATH, f'//div[@id="gh-top"]/ul/descendant::li/a[not(text()="")]')
+        return all_links_elemegetchildren
     
 
 @step('Click on menu item {menu_item}')

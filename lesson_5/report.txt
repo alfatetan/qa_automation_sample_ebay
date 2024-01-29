@@ -1,0 +1,51 @@
+Feature: Test filters with particular group of purchases # features/filter.feature:1
+
+  Scenario Outline: Check the obtained result using the filtering option -- @1.1   # features/filter.feature:11
+    Given Navigate to the "https://ebay.com"                                       # features/steps/definitions.py:7
+    When Enter "Memory" to searchfield                                             # features/steps/definitions.py:16
+    When "DDR4 DRAM" is selected from "Type"                                       # features/steps/definitions.py:26
+    Then "DDR4" should be in the items title                                       # features/steps/definitions.py:54
+      Assertion Failed: The next elements with ids have errors [['item3d56c14354', '1GB DDR-400 PC3200 Non-ECC Desktop PC (DIMM) Memory RAM 184-pin'], ['item4719859376', 'HMA41GU7AFR8N-TF, SK Hynix 8GB 2Rx8 PC4-2133P-EE0-11 Server Memory Tested'], ['item4e00c5a3eb', 'Lot Of 2 Micron 4GB PC4 Laptop RAM Memory Stick 1Rx8 PC4-2400T Free Ship'], ['item1f6927c0b8', '256GB 32GB X 8 HPE PC4-2400T ECC REG 809083-091 G9 GEN 9'], ['item28e8a37366', 'HMA82GR7CJR4N-VK HYNIX 16GB (1X16GB) 1RX4 PC4-2666V MEMORY'], ['item26c6cdd947', 'Samsung 64GB (16x4) PC4-2666V 2Rx8 RDIMM REGECC MEMORY']]
+
+
+  Scenario Outline: Check the obtained result using the filtering option -- @1.2   # features/filter.feature:12
+    Given Navigate to the "https://ebay.com"                                       # features/steps/definitions.py:7
+    When Enter "Memory" to searchfield                                             # features/steps/definitions.py:16
+    When "32 GB" is selected from "Total Capacity"                                 # features/steps/definitions.py:26
+    Then "32GB" should be in the items title                                       # features/steps/definitions.py:54
+      Assertion Failed: The next elements with ids have errors [['item59ec94a93e', 'HyperX FURY DDR4 16GB 3200 MHz PC4-25600 Desktop RAM Memory DIMM 288pin 2x 16GB'], ['item44debc09f7', 'ADATA 16GB DDR4 SODIMM 3200MHz PC4-25600 CL22 260-pin Memory RAM Laptop'], ['item26c350e347', '4X8GB HMT41GU7BFR8A-PB SK HYNIX DDR3L KIT 1600MHZ ECC SERVER MEMORY A4-2'], ['item4049d57ec9', 'CRUCIAL DDR4 16GB 2x 3200 PC4-25600 Laptop SODIMM Non-ECC 260-Pin Memory RAM']]
+
+
+  Scenario Outline: Check the obtained result using the filtering option -- @1.3   # features/filter.feature:13
+    Given Navigate to the "https://ebay.com"                                       # features/steps/definitions.py:7
+    When Enter "Monitor" to searchfield                                            # features/steps/definitions.py:16
+    When "3440 x 1440" is selected from "Maximum Resolution"                       # features/steps/definitions.py:26
+    Then "3440x1440" should be in the items title                                  # features/steps/definitions.py:54
+      Assertion Failed: The next elements with ids have errors [['item5748189ae7', 'Dell P3421W 34" Ultrawide 3800R Curved USB-C Monitor (WQHD, 3440 x 1440 at 60Hz)'], ['item46fc2ac8e9', 'Dell U3417W 34" Ultra Sharp 21:9 LED IPS Curved Monitor No Stand 90-Day WYT GC1'], ['item5492bc0e0c', 'LG 35" Class UltraWide QHD 3440 x 1440 100Hz 5ms Curved Monitor - 35WN65C-B'], ['item36ced2ac1f', 'Samsung S34A654UBN ViewFinity S6 LED VA Curved Computer Monitor 34" 3440 x 1440*'], ['item2b41fb394b', 'Dell U3419W 34" Ultra Sharp 21:9 LED IPS Curved Monitor - Free Shipping'], ['item3b6784c2ad', '[CR] MSI Optix MAG342CQR 34" UWQHD Curved Gaming Monitor, 144Hz/1ms'], ['item29065d6d61', 'HP 34-inch IPS 165Hz UWQHD HDR Gaming Monitor, Eyesafe VESA mountable (2V7W4AA)'], ['item54e93afbd5', 'Sceptre C355W3440UN 35 inch LED Curved Monitor'], ['item5e3c6aa044', 'GIGABYTE G34WQC A 34" 144Hz WQHD LCD Curved Gaming Monitor - Black'], ['item2daec05800', "LG UltraGear 34GP63A-B 34'' QHD HDR VA LED Curved Gaming Monitor"], ['item54e99058f5', 'SAMSUNG 34" Odyssey G5 Curved Ultra-Wide LC34G55TWWNXZA 165Hz - MONITOR ONLY'], ['item26c7efacd0', 'LG Electronics 34UB88-P 34-Inch 21:9 UltraWide QHD IPS Monitor'], ['item52c063668a', "LG UltraWide 34WQ60C-B 34'' 3440 x 1440 QHD IPS HDR Curved Monitor"], ['item54e9a65980', "LG UltraWide 34WQ60C-B 34'' 3440 x 1440 QHD IPS HDR Curved Monitor"], ['item26c4a53fbe', 'Samsung ViewFinity S5 34" Ultra-WQHD 100Hz AMD FreeSync Monitor (Please Read)'], ['item52bfe1e757', 'Dell S3422DWG 34" WQHD VA LED Curved Gaming Monitor'], ['item21e508ebae', 'Dell UltraSharp U3415W 34 Ultra Sharp Curved LED Lit Monitor'], ['item54e9b57790', 'Dell Alienware 34" Curved Gaming Monitor - AW3420DW'], ['item349d6c89e5', 'NEW LISTINGSamsung SJ55W 34 inch VA LCD UltraWide Monitor'], ['item4e0ced9706', 'Dell 34.1 inch U3421WE UltraSharp Curved Monitor WQHD Gray - Good Condition #69'], ['item2f9ad12e5c', 'Acer XZ342CU S 34" 4K UHD 165Hz 1ms Desktop Monitor Black UMCX2AAS01'], ['item4054bc3149', 'LG 34WP60C-B 34" 21:9 Curved UltraWide QHD (3440 x 1440) Monitor'], ['item54ea00e8d3', "NEW LISTINGDell S3422DWG 34'' 21:9 Curved FreeSync WQHD HDR VA Gaming Monitor"], ['item44f609114d', 'LG UltraWide 35WN65C 35" VA LED Curved Monitor - Black'], ['item349be1a24f', "LG 34WP65C-B 34'' Curved UltraWide QHD 160Hz HDR FreeSync VA Gaming Monitor"], ['item5bf69ac27f', 'GIGABYTE M34WQ 34" UWQHD IPS LED Gaming Monitor - Black'], ['item46d61244d3', 'GIGABYTE G34WQC A-SA 34" 144Hz Curved Gaming Monitor, 3440 x 1440 VA 1500R Displ'], ['item5c0109d8e7', 'NEW Samsung S34C504GAN 34" ViewFinity S50GC Ultra-WQHD 100Hz HDR10 Monitor'], ['item54e96ad01e', 'Samsung Odyssey 34" G85SB Series OLED Curved Monitor 175Hz 0.03ms LS34BG850SNXZA'], ['item2906f258cc', 'Samsung SJ55W 34" UltraWQHD 21:9 1440p 75hz Ultrawide Monitor'], ['item575c3c07bb', 'SAMSUNG 34" Odyssey G5 Curved Ultra-Wide LC34G55TWWNXZA 165Hz'], ['item5bc89b4790', 'ViewSonic Gaming Monitor VX3418-2KPC 34" 1440p 144Hz - FreeSync Premium'], ['item5c019397fe', 'Dell 34" Curved Gaming Monitor AMD Free Sync S3422DWG'], ['item1b03ea2144', 'Dell Alienware 34" Curved Gaming Monitor - AW3420DW'], ['item244d5938b5', 'LG 34" Curved Ultrawide™ WQHD (3440 x 1440) Monitor - 34WR50QC-B'], ['item46fc4a8229', 'MSI MAG401QR 40" UWQHD 3440 x 1440 (2K) 155 Hz FreeSync Premium (AMD Adaptive Sy'], ['item5e3dab7e69', 'Viotec 32 in Curved Monitor'], ['item3bb210e5d3', 'DELL S3422DWG 34" 3440 x 1440 Curved Gaming Monitor *Pre-owned* FREE SHIPPING'], ['item5c0130f106', 'Lenovo G34w-10 34" Widescreen Curved WLED Gaming Monitor-Brand New'], ['item1f6927189b', 'Alienware AW3423DWF OLED Monitor'], ['item349c1d5436', 'Samsung - S34J550WQN - 34 inch WQHD 3000:1 4ms Ultrawide Gaming Monitor READ']]
+
+
+  Scenario Outline: Check the obtained result using the filtering option -- @1.4   # features/filter.feature:14
+    Given Navigate to the "https://ebay.com"                                       # features/steps/definitions.py:7
+    When Enter "Monitor" to searchfield                                            # features/steps/definitions.py:16
+    When "100 Hz" is selected from "Refresh Rate"                                  # features/steps/definitions.py:26
+    Then "100Hz" should be in the items title                                      # features/steps/definitions.py:54
+      Assertion Failed: The next elements with ids have errors [['item5bc89b4654', 'ViewSonic IPS Monitor VA2456-MHD 24" Thin-Bezel 1080p with HDMI, DP and VGA'], ['item5bc89b479b', 'ViewSonic IPS Monitor VA2759-Smh 27" 1080p with HDMI and VGA for Home and Office'], ['item3e055dfa51', 'Acer KB272 EBI 27" 1920 x 1080 IPS Panel AMD FreeSync 100 Hz 1ms VRB Monitor'], ['item3ba5f7aaf2', 'Acer KA242Y E - 23.8" Widescreen LCD Monitor IPS 1ms VRB Free Sync'], ['item36ced2ac1f', 'Samsung S34A654UBN ViewFinity S6 LED VA Curved Computer Monitor 34" 3440 x 1440*'], ['item2b5ecee0bd', 'NEW LISTINGAcer SB242Y EBI 23.8" Full HD 1080P IPS Zero-Frame Gaming Monitor AMD Freesync'], ['item5bc89b47b4', 'ViewSonic Full HD 1080p Monitor VA2247-MH 22", AMD FreeSync'], ['item4705c22dad', 'MSI 27" 100 Hz IPS FHD Gaming Monitor FreeSync (AMD Adaptive Sync) 1920 x 1080 8'], ['item2fa4eacd31', 'LG 34" IPS LED ULTRAWIDE FHD AMD FREESYNC MONITOR | 34WQ500-B'], ['item54e93afbd5', 'Sceptre C355W3440UN 35 inch LED Curved Monitor'], ['item245334701d', 'Lenovo 23.8 inch Gaming Monitor - G24e-20'], ['item44f609114d', 'LG UltraWide 35WN65C 35" VA LED Curved Monitor - Black'], ['item1f69548a28', 'NEW LISTINGView Edge Computer Monitor'], ['item2907184922', 'NEW LISTINGLG 29WQ600-W 29" 21:9 UltraWide Full HD IPS Monitor with AMD FreeSync'], ['item405026d72f', 'Acre AOPEN SA2 - 23.8" FullHD Monitor 1920x1080 16:9 1ms 250Nit HDMI'], ['item29029d75af', 'Acer EK271 Ebi 27" Full HD 1080p VGA HDMI LCD Monitor, Black'], ['item5e3df36afe', 'Dell S3423DWC Curved USB-C Monitor 34In WQHD (3440X1440) 4Ms 21:9 Free SHIP!'], ['item5c010c7fd9', 'Sceptre 27" Gaming Monitor E275W-FW100T Adaptive Sync'], ['item47027ba8b0', 'Acer 27" 100 Hz (HDMI) VA FHD Gaming Monitor NA 1920 x 1080 72% NTSC Built-in Sp'], ['item2905a28b85', 'Acer 24" (23.8") 100 Hz VA Gaming Monitor AMD FreeSync 1920 x 1080']]
+
+
+  Scenario Outline: Check the obtained result using the filtering option -- @1.5   # features/filter.feature:15
+    Given Navigate to the "https://ebay.com"                                       # features/steps/definitions.py:7
+    When Enter "Keyboard" to searchfield                                           # features/steps/definitions.py:16
+    When "Logitech" is selected from "Brand"                                       # features/steps/definitions.py:26
+    Then "Logitech" should be in the items title                                   # features/steps/definitions.py:54
+
+
+Failing scenarios:
+  features/filter.feature:11  Check the obtained result using the filtering option -- @1.1 
+  features/filter.feature:12  Check the obtained result using the filtering option -- @1.2 
+  features/filter.feature:13  Check the obtained result using the filtering option -- @1.3 
+  features/filter.feature:14  Check the obtained result using the filtering option -- @1.4 
+
+0 features passed, 1 failed, 0 skipped
+1 scenario passed, 4 failed, 0 skipped
+16 steps passed, 4 failed, 0 skipped, 0 undefined
+Took 0m37.515s
