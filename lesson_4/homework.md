@@ -2,13 +2,22 @@
 
 ## Homework tasks:
 
-- [ ] eBay item filters - follow the class on xpath grouping for widgets
+- [x] eBay item filters - follow the class on xpath grouping for widgets
       Xpath brainteasers:
 - [x] register with any mail at http://www.old.practicalsqa.net/
       go to Brainteasers from top menu
       NOTE: "" (double quotes not needed there)
 
 ## Results
+
+### Code practice
+
+I combined the two tasks into one to test several filters in cell phone classification.
+In my code here (Lesson #4) I left just search results checking.
+
+Oddly enough, the test revealed a few bugs in the actual performance of the eBay website.
+
+## In results.txt you can see the test results. I
 
 http://www.old.practicalsqa.net/
 

@@ -1,0 +1,30 @@
+Feature: Test search and filtering results on the ebay.com website # features/Test.feature:1
+
+  Scenario: Test search results              # features/Test.feature:3
+    Given Navigate to the "https://ebay.com" # features/steps/definitions.py:7
+    When Enter "iPhone" to searchfield       # features/steps/definitions.py:15
+    Then All results contain "iPhone"        # features/steps/definitions.py:23
+
+  Scenario: Test search results              # features/Test.feature:8
+    Given Navigate to the "https://ebay.com" # features/steps/definitions.py:7
+    When Enter "dress" to searchfield        # features/steps/definitions.py:15
+    Then All results contain "dress"         # features/steps/definitions.py:23
+      Assertion Failed: The next elements with ids have errors ['item2cfc1d8c85']
+
+
+  Scenario: Test search results              # features/Test.feature:13
+    Given Navigate to the "https://ebay.com" # features/steps/definitions.py:7
+    When Enter "headphones" to searchfield   # features/steps/definitions.py:15
+    Then All results contain "headphones"    # features/steps/definitions.py:23
+      Assertion Failed: The next elements with ids have errors ['item1d6801494f', 'item4941bde6e1', 'item56f826cede', 'item2fa4b01c98', 'item423a4d09f5', 'item57122ae54e', 'item3baa40e43d', 'item25c18fa781', 'item573743c57c', 'item3dba0fa65b', 'item4004cfa2e4', 'item28fc32e073', 'item2fa44bd854', 'item2fa3b46d0b', 'item4bcc3328e5', 'item2d1cda0a5e']
+
+
+
+Failing scenarios:
+  features/Test.feature:8  Test search results
+  features/Test.feature:13  Test search results
+
+0 features passed, 1 failed, 0 skipped
+1 scenario passed, 2 failed, 0 skipped
+7 steps passed, 2 failed, 0 skipped, 0 undefined
+Took 0m34.376s
