@@ -11,7 +11,7 @@
 
 - [ ] Create scenario to validate filtering result on first several pages. Pagination must use while loop
 
-:see*no_evil: \*\*\_Implemented in the next lesson (#7)*\*\*
+:see_no_evil: **_Implemented in the next lesson (#7)_**
 
 ---
 
