@@ -1,0 +1,48 @@
+Feature: Header navigation checking # header_navigation.feature:1
+
+  @selective
+  Scenario Outline: Check the header navigation elements -- @1.1   # header_navigation.feature:12
+    Given Navigate to the "https://ebay.com"                       # steps/common_definitions.py:7
+    And Maximize browser window                                    # steps/common_definitions.py:15
+    When Click on menu item "Sign in"                              # steps/menu_items_definitions.py:10
+    Then Page title contains "Sign In or Register"                 # steps/common_definitions.py:28
+      Assertion Failed: !!! Impossible to check - CAPTCHA !!!
+
+
+  @selective
+  Scenario Outline: Check the header navigation elements -- @1.2   # header_navigation.feature:13
+    Given Navigate to the "https://ebay.com"                       # steps/common_definitions.py:7
+    And Maximize browser window                                    # steps/common_definitions.py:15
+    When Click on menu item "register"                             # steps/menu_items_definitions.py:10
+    Then Page title contains "Create a personal account"           # steps/common_definitions.py:28
+      Assertion Failed: !!! Impossible to check - CAPTCHA !!!
+
+
+  @selective
+  Scenario Outline: Check the header navigation elements -- @1.3   # header_navigation.feature:14
+    Given Navigate to the "https://ebay.com"                       # steps/common_definitions.py:7
+    And Maximize browser window                                    # steps/common_definitions.py:15
+    When Click on menu item "Daily Deals"                          # steps/menu_items_definitions.py:10
+    Then Page title contains "Best deals and Free Shipping"        # steps/common_definitions.py:28
+
+  @selective
+  Scenario Outline: Check the header navigation elements -- @1.4   # header_navigation.feature:15
+    Given Navigate to the "https://ebay.com"                       # steps/common_definitions.py:7
+    And Maximize browser window                                    # steps/common_definitions.py:15
+    When Click on menu item "Gift Cards"                           # steps/menu_items_definitions.py:10
+    Then Page title contains "Something"                           # steps/common_definitions.py:28
+      Assertion Failed: !!! Page title does not contain required text !!! 
+      Required text: Something not contains in the 
+      Page title: ebay gift cards | ebay.com
+
+
+
+Failing scenarios:
+  header_navigation.feature:12  Check the header navigation elements -- @1.1 
+  header_navigation.feature:13  Check the header navigation elements -- @1.2 
+  header_navigation.feature:15  Check the header navigation elements -- @1.4 
+
+0 features passed, 1 failed, 0 skipped
+1 scenario passed, 3 failed, 0 skipped
+13 steps passed, 3 failed, 0 skipped, 0 undefined
+Took 0m13.813s

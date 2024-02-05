@@ -1,5 +1,6 @@
 Feature: Test filters with particular searching results
 
+    @selective
     Scenario Outline: Check the obtained result using the filtering option
         Given Navigate to the "https://ebay.com"
         And Maximize browser window
@@ -7,6 +8,7 @@ Feature: Test filters with particular searching results
         When "<OPTION>" is selected from "<FILTER>"
         Then "<KEYWORDS>" should be in the items title
     
+    # Use semicolon (:) to separate the keywords
     Examples:
         | ITEM     | FILTER             | OPTION      | KEYWORDS                  |
         | Memory   | Type               | DDR4 DRAM   | DDR4 : DDR 4              |

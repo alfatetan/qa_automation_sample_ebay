@@ -2,20 +2,26 @@
 
 #### Scenario Outlines - convert existing repetitive TCs into Scenario Outline:
 
-- [ ] Header navigation links
-- [ ] Flyout menu (Motors / Electronics etc.)
-- [ ] Items search
+- [x] Header navigation links
+- [x] Flyout menu (Motors / Electronics etc.)
+- [x] Items search
 - [x] Filters
 
 #### While loop:
 
 - [ ] Create scenario to validate filtering result on first several pages. Pagination must use while loop
 
+:see*no_evil: \*\*\_Implemented in the next lesson (#7)*\*\*
+
 ---
 
-## Filters
+### Header navigation links
 
-I added a new feature where we can use different filtering results. To use this feature we need to use a separator ":" in a table like this:
+In the testing process the code compares a page's title with expected piece of text. If this title includes the text the test is considered passed.
+
+### Filters and Search Results
+
+A new feature was added where we can use several different filtering results. To use this feature, we need to use a semicolon separator (":") in a table like this:
 
 ```gherkin
     Examples:

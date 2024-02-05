@@ -65,5 +65,3 @@ def keyword_verification(browser, keywords):
         if error:
             errors_list.append([el_id, title.text])
     assert not errors_list, f"The next elements with ids have errors {errors_list}"
-
-
