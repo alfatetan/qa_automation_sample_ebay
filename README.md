@@ -8,17 +8,21 @@ _UPDATED 02/05/2024 3:00pm_
 
 ## Full navigation for the lessons:
 
-### [Lesson 1](/lesson_1/homework.md) January 11, 2024 (Thursday)
+### [Case 1](/case_1/readme.md) January 11, 2024 (Thursday)
 
-### [Lesson 2](/lesson_2/homework.md) January 15, 2024 (Monday)
+### [Case 2](/case_2/readme.md) January 15, 2024 (Monday)
 
-### [Lesson 3](/lesson_3/homework.md) January 18, 2024 (Thursday)
+### [Case 3](/case_3/readme.md) January 18, 2024 (Thursday)
 
-### [Lesson 4](/lesson_4/homework.md) January 22, 2024 (Monday)
+### [Case 4](/case_4/readme.md) January 22, 2024 (Monday)
 
-### [Lesson 5](/lesson_5/homework.md) January 25, 2024 (Thursday)
+### [Case 5](/case_5/readme.md) January 25, 2024 (Thursday)
 
-### [Lesson 6](/lesson_6/homework.md) January 29, 2024 (Monday)
+### [Case 6](/case_6/readme.md) January 29, 2024 (Monday)
+
+### [Case 7](/case_7/readme.md) February 1, 2024 (Monday)
+
+### [Case 8](/case_8/readme.md) February 5, 2024 (Monday)
 
 ---
 
