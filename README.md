@@ -20,7 +20,7 @@ _UPDATED 02/05/2024 3:00pm_
 
 ### [Case 6](/case_6/readme.md) January 29, 2024 (Monday)
 
-### [Case 7](/case_7/readme.md) February 1, 2024 (Monday)
+### [Case 7](/case_7/readme.md) February 1, 2024 (Thursday)
 
 ### [Case 8](/case_8/readme.md) February 5, 2024 (Monday)
 
