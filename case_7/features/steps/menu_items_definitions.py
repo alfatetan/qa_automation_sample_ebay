@@ -27,7 +27,6 @@ def header_verification(browser, keyword):
     
 @step('Main menu item in "{level}" level "{desired_menu_item}" is clicked')
 def click_main_menu_item(browser, level, desired_menu_item):
-    
     # Choose the menu level
     if level == "root":
         menu_xpath = '//ul[@class="vl-flyout-nav__container"]/li[not(contains(@class, "js-more-show"))]/a'

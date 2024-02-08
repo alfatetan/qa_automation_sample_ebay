@@ -6,7 +6,7 @@ Feature: Searching results verification
         When Enter "<ITEM>" to searchfield
         Then "<KEYWORDS>" should be in the items title
 
-    # Use semicolon (:) to separate keywords
+    # Use a colon (:) to separate keywords
     Examples:
         | ITEM    | KEYWORDS                             |
         | Dress   | Dress: Robe : Strapless : Shirtdress |

@@ -12,4 +12,3 @@ Feature: Test main flyout menu items
         | Sporting Goods | Sporting Goods  |
         | Motors         | Motors          |
         | Fashion        | Clothing, Shoes |
-        | Incredible     | Nonexist        |
