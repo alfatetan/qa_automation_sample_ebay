@@ -5,24 +5,24 @@ from selenium.webdriver.common.keys import Keys
 from time import sleep
 
 @step('Enter "{item}" to searchfield')
-def searchfield(browser, item):
+def searchfield(context, item):
     """
     Obtain the search results
     """
-    searchfield = browser.driver.find_element(By.XPATH, '//input[contains(@aria-label, "Search for anything")]')
+    searchfield = context.driver.find_element(By.XPATH, '//input[contains(@aria-label, "Search for anything")]')
     searchfield.send_keys(item)
     searchfield.send_keys(Keys.ENTER)
 
 # When "<OPTION>" is selected from "<FILTER>"
 @step('"{required_option}" is selected from "{required_filter}"')
-def filter_selecting(browser, required_option, required_filter):
+def filter_selecting(context, required_option, required_filter):
     """
     Select the required option in particularly filter
     IN : required_filter, required_option
     OUT : Action - webdriver clicks on the required option in required filter
     """
     # Parse all filters
-    filters = browser.driver.find_elements(By.XPATH, '//ul[@class="x-refine__left__nav"]/li/ul/li')
+    filters = context.driver.find_elements(By.XPATH, '//ul[@class="x-refine__left__nav"]/li/ul/li')
     # Find the required filter that match with required title
     for filter in filters:
         title = filter.find_element(By.XPATH, './/div[@class="x-refine__item__title-container"]').text
@@ -43,11 +43,11 @@ def filter_selecting(browser, required_option, required_filter):
 
 # Then "<KEYWORD>" should be in the items title
 @step('"{keywords}" should be in the items title')
-def keyword_verification(browser, keywords):
+def keyword_verification(context, keywords):
     # Parse all keywords in the list
     all_keywords = keywords.split(":")
     # Parse all elements after filtering
-    all_results = browser.driver.find_elements(By.XPATH, '//ul[contains(@class, "srp-results")]/li[@id]')
+    all_results = context.driver.find_elements(By.XPATH, '//ul[contains(@class, "srp-results")]/li[@id]')
     # All errors should be saved in the list
     errors_list = []
     # One by one verifying all titles for keyword inclusion

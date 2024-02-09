@@ -5,30 +5,30 @@ from datetime import datetime as dt
 # def before_all():
 #     pass
 
-def before_feature(browser, feature):
-    browser.URL = 'https://ebay.com'
+def before_feature(context, feature):
+    context.URL = 'https://ebay.com'
 
-def before_scenario(browser, scenario):
-    browser.driver = webdriver.Chrome()
+def before_scenario(context, scenario):
+    context.driver = webdriver.Chrome()
 
-# def before_step(browser, step):
+# def before_step(context, step):
 #     pass
 
-def after_step(browser, step):
+def after_step(context, step):
     # if step is filed take a screenshot
     if step.status == 'failed':
         # filename format as a step name through underscores space
         screenshot_name = '_'.join(re.findall('\w+', step.name))
         filename = f'{dt.now().strftime("%Y-%m-%d_%H:%M:%S")}_{screenshot_name}.png'
-        browser.driver.save_screenshot(f'./reports/screenshots/{filename}')
+        context.driver.save_screenshot(f'./reports/screenshots/{filename}')
 
-def after_scenario(browser, scenario):
+def after_scenario(context, scenario):
     # close window
-    browser.driver.close()
+    context.driver.close()
     # quit the chrome driver
-    browser.driver.quit()
+    context.driver.quit()
 
-# def after_feature(browser, feature):
+# def after_feature(context, feature):
 #     pass
 
 # def after_all():

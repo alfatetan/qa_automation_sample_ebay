@@ -5,19 +5,19 @@ from selenium.webdriver.common.keys import Keys
 from random import randint
 
 @step('Navigate to the eBay')
-def start_browser(browser):
+def start_context(context):
     """
-    Open a browser with the specified webpage URL
+    Open a context with the specified webpage URL
     """
-    browser.driver.get(browser.URL)
+    context.driver.get(context.URL)
 
-@step('Maximize browser window')
-def maximize_window(browser):
-    browser.driver.maximize_window()
+@step('Maximize context window')
+def maximize_window(context):
+    context.driver.maximize_window()
 
 @step('Page exists')
-def page_avaliability_check(browser):
-    title = browser.driver.title.lower()
+def page_avaliability_check(context):
+    title = context.driver.title.lower()
     if 'error' in title:
         assert False, "!!! The page is not available !!!"
     elif 'security' in title:
@@ -25,25 +25,25 @@ def page_avaliability_check(browser):
 
 #Then Page title contains "<PAGE_TITLE>"
 @step('Page title contains "{page_title}"')
-def page_title_matching(browser, page_title):
+def page_title_matching(context, page_title):
     # Check if page is existing
-    page_avaliability_check(browser)
+    page_avaliability_check(context)
     
     # If page exists, check the title
-    title = browser.driver.title.lower()
+    title = context.driver.title.lower()
     error_msg = f"!!! Page title does not contain required text !!! \n"\
                 f"Required text: {page_title} not contains in the \n"\
                 f"Page title: {title}"
     assert page_title.lower() in title, error_msg
 
 @step ('Turn to page "{desired_page}"')
-def turn_to_page(browser, desired_page):
+def turn_to_page(context, desired_page):
     """
     IN: desired_page - number of page [int] || "next", "previous" or "random" [string]
     OUT: desired page is selected
     """
-    pages_range_els = browser.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
-    next_page_el = browser.driver.find_element(By.XPATH, '//*[@type="next"]')
+    pages_range_els = context.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
+    next_page_el = context.driver.find_element(By.XPATH, '//*[@type="next"]')
     first_page = int(pages_range_els[0].text)
     last_page = int(pages_range_els[-1].text)
     
@@ -53,13 +53,13 @@ def turn_to_page(browser, desired_page):
         while (desired_page not in range(first_page, last_page + 1)):
             # check if our page does not exist in the last range
             try:
-                next_page_el = browser.driver.find_element(By.XPATH, '//*[@type="next"]')
+                next_page_el = context.driver.find_element(By.XPATH, '//*[@type="next"]')
             except:
                 raise ValueError(f"!!! The page #{desired_page} does not exist in the range !!!")
             # shift the pages range
             pages_range_els[last_page - 1].click()
             # refresh the page's data
-            pages_range_els = browser.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
+            pages_range_els = context.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
             first_page = int(pages_range_els[0].text)
             last_page = int(pages_range_els[-1].text)
         # When the range is searched we choose our desired page and click on it
@@ -80,14 +80,14 @@ def turn_to_page(browser, desired_page):
         elif desired_page == "next":
             next_page_el.click()
         elif desired_page == "previous":
-            prev_page_el = browser.driver.find_element(By.XPATH, '//*[@type="previous"]')
+            prev_page_el = context.driver.find_element(By.XPATH, '//*[@type="previous"]')
             prev_page_el.click()
         elif type(desired_page) is not int:
             raise ValueError("!!! Not accessible function parameter - number of page: (turn_to_page function) !!!")
     
     
 @step('Do on pages from "{start_pg}" to "{end_pg}" next steps')
-def do_on_pages(browser, start_pg, end_pg):
+def do_on_pages(context, start_pg, end_pg):
     try:
         start_pg = int(start_pg)
         end_pg = int(end_pg)
@@ -97,28 +97,28 @@ def do_on_pages(browser, start_pg, end_pg):
     
     for page in page_range:
         execute = f'When Turn to page "{page}"'
-        browser.execute_steps(f'''
+        context.execute_steps(f'''
             When Turn to page "{page}"
         ''')
-        for step_row in browser.table.rows:
+        for step_row in context.table.rows:
             # parse the steps and execute them
             step_dict = step_row.as_dict()
             step = step_dict['Steps']
-            browser.execute_steps(step)
+            context.execute_steps(step)
 
 @step('For all pages')
-def for_all_pages(browser):
+def for_all_pages(context):
     while (True):
-        current_page = int(browser.driver.find_element(By.XPATH, '//ol[@class="pagination__items"]/li/a[@aria-current]').text)
-        pages_range_els = browser.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
+        current_page = int(context.driver.find_element(By.XPATH, '//ol[@class="pagination__items"]/li/a[@aria-current]').text)
+        pages_range_els = context.driver.find_elements(By.XPATH, '//ol[@class="pagination__items"]/li[not(@hidden)]/a')
         last_page = int(pages_range_els[-1].text)
         
-        for step_row in browser.table.rows:
+        for step_row in context.table.rows:
             # parse the steps and execute them
             step_dict = step_row.as_dict()
             step = step_dict['Steps']
-            browser.execute_steps(step)
-        next_page_el = browser.driver.find_element(By.XPATH, '//*[@type="next"]')
+            context.execute_steps(step)
+        next_page_el = context.driver.find_element(By.XPATH, '//*[@type="next"]')
 
         if current_page == last_page:
             break
