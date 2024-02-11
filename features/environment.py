@@ -10,6 +10,8 @@ def before_feature(context, feature):
 
 def before_scenario(context, scenario):
     context.driver = webdriver.Chrome()
+    # Add the implicity waiting
+    context.driver.implicitly_wait(3)
 
 # def before_step(context, step):
 #     pass

@@ -93,3 +93,5 @@ Feature: Test filters with particular searching results
         | ITEM   | FILTER           | OPTION | KEYWORDS              |
         | iPhone | Storage Capacity | 1 TB   | iPhone : Apple        |
         | iPad   | Storage Capacity | 1 TB   | iPad : Apple : Tablet |
+
+# TODO: Add checking for items webpages

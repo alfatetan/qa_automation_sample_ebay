@@ -15,3 +15,6 @@ Feature: Searching results verification
         | CPU     | Intel : AMD : CPU                    |
         | Monitor | Monitor : Display                    |
         | Watch   | Watch                                |
+
+# TODO: Add scenario for each item and set of keywords
+# TODO: Searching on several pages
