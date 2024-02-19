@@ -16,5 +16,6 @@ Feature: Searching results verification
         | Monitor | Monitor : Display                    |
         | Watch   | Watch                                |
 
+# TODO: Searching on an opened item page
 # TODO: Add scenario for each item and set of keywords
 # TODO: Searching on several pages

@@ -3,6 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from random import randint
+from selenium.webdriver.support.ui import WebDriverWait as Wait
+from selenium.webdriver.support import expected_conditions as EC
 
 @step('Navigate to the eBay')
 def start_context(context):
@@ -10,6 +12,9 @@ def start_context(context):
     Open a context with the specified webpage URL
     """
     context.driver.get(context.URL)
+    # check if webpage uploaded correctly
+    headers = Wait(context.driver, 3).until(EC.presence_of_element_located((By.XPATH, '//h2[@class="vl-card-header__headline"]')), message="!!! MAIN PAGE DOES NOT APPEAR HERE !!!")
+
 
 @step('Maximize browser window')
 def maximize_window(context):

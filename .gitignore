@@ -168,3 +168,4 @@ launch.json
 .temp/
 .DS_Store
 github_link.txt
+.hidden

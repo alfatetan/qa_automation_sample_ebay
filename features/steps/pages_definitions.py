@@ -1,6 +1,9 @@
 from behave import step, when, given, then
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait as Wait
+from selenium.webdriver.support import expected_conditions as EC
+from random import randint
 
 @step ('Turn to page "{desired_page}"')
 def turn_to_page(context, desired_page):
@@ -18,10 +21,15 @@ def turn_to_page(context, desired_page):
         # go to needed range pages (avoid step by step)
         while (desired_page not in range(first_page, last_page + 1)):
             # check if our page does not exist in the last range
-            try:
-                next_page_el = context.driver.find_element(By.XPATH, '//*[@type="next"]')
-            except:
-                raise ValueError(f"!!! The page #{desired_page} does not exist in the range !!!")
+            # ----------------------------------------------------------------
+            # try:
+            #     next_page_el = context.driver.find_element(By.XPATH, '//a[@type="next"]')
+            # except:
+            #     raise ValueError(f"!!! The page #{desired_page} does not exist in the range !!!")
+            # ----------------------------------------------------------------
+            # instead of previous construction we can use the next expression:
+            next_page_el = Wait(context.driver, 3).until(EC.presence_of_element_located(
+                    (By.XPATH, '//a[@type="next"]')), message=f"!!! The page #{desired_page} does not exist in the range !!!")
             # shift the pages range
             pages_range_els[last_page - 1].click()
             # refresh the page's data
@@ -32,7 +40,7 @@ def turn_to_page(context, desired_page):
         for page in pages_range_els:
             if int(page.text) == desired_page:
                 page.click()
-        return
+                break
     except:
         # The turn to the random page is implemented as a random page
         # from the current list of pages (the range of 10 pages). It's
@@ -48,7 +56,10 @@ def turn_to_page(context, desired_page):
         elif desired_page == "previous":
             prev_page_el = context.driver.find_element(By.XPATH, '//*[@type="previous"]')
             prev_page_el.click()
-        elif type(desired_page) is not int:
+        elif int(desired_page):
+            raise ValueError("!!! This page does not exist !!!")
+        # elif type(desired_page) is not int:
+        else:
             raise ValueError("!!! Not accessible function parameter - number of page: (turn_to_page function) !!!")
     
     

@@ -7,8 +7,8 @@ Feature: Test filters with particular searching results
         When Enter "<ITEM>" to searchfield
         When "<OPTION>" is selected from "<FILTER>"
         Then "<KEYWORDS>" should be in the items title
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM     | FILTER             | OPTION      | KEYWORDS                  |
         | Memory   | Type               | DDR4 DRAM   | DDR4 : DDR 4              |
         | Memory   | Total Capacity     | 32 GB       | 32GB : 32 GB : 32G : 32 G |
@@ -22,8 +22,8 @@ Feature: Test filters with particular searching results
         When "<OPTION>" is selected from "<FILTER>"
         And Turn to page "next"
         Then "<KEYWORDS>" should be in the items title
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM     | FILTER             | OPTION      | KEYWORDS                  |
         | Memory   | Type               | DDR4 DRAM   | DDR4 : DDR 4              |
         | Memory   | Total Capacity     | 32 GB       | 32GB : 32 GB : 32G : 32 G |
@@ -36,8 +36,8 @@ Feature: Test filters with particular searching results
         When "<OPTION>" is selected from "<FILTER>"
         And Turn to page "13"
         Then "<KEYWORDS>" should be in the items title
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM     | FILTER             | OPTION      | KEYWORDS                  |
         | Keyboard | Brand              | Logitech    | Logitech                  |
         # | Memory   | Type               | DDR4 DRAM   | DDR4 : DDR 4              |
@@ -50,8 +50,8 @@ Feature: Test filters with particular searching results
         When "<OPTION>" is selected from "<FILTER>"
         And Turn to page "random"
         Then "<KEYWORDS>" should be in the items title
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM     | FILTER             | OPTION      | KEYWORDS                  |
         | Memory   | Type               | DDR4 DRAM   | DDR4 : DDR 4              |
         | Memory   | Total Capacity     | 32 GB       | 32GB : 32 GB : 32G : 32 G |
@@ -77,8 +77,8 @@ Feature: Test filters with particular searching results
         Then Do on pages from "3" to "1" next steps
             | Steps                                            |
             | Then "<KEYWORDS>" should be in the items title   |  
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM | FILTER | OPTION | KEYWORDS |
         | CPU  | Brand  | Intel  | Intel    |
 
@@ -88,10 +88,27 @@ Feature: Test filters with particular searching results
         And For all pages
             | Steps                                          |
             | Then "<KEYWORDS>" should be in the items title |
-    # Use a colon (:) to separate the keywords
     Examples:
+    # Use a colon (:) to separate the keywords
         | ITEM   | FILTER           | OPTION | KEYWORDS              |
         | iPhone | Storage Capacity | 1 TB   | iPhone : Apple        |
         | iPad   | Storage Capacity | 1 TB   | iPad : Apple : Tablet |
+
+    Scenario: Negative - Checking the filter on the 99 page
+        When Enter "iPad" to searchfield
+        When "1 TB" is selected from "Storage Capacity"
+        And Turn to page "15"
+        Then "iPad : Apple : Tablet" should be in the items title
+
+    Scenario Outline: Positive - Items specifics should include filter values
+        When Enter "<ITEM>" to searchfield
+        And "<OPTION>" is selected from "<FILTER>"
+        And Click on the "1, 3, 5" searching results
+        Then Page exists
+        And About page should contain "<KEYWORDS>" in "<FILTER>"
+    Examples:
+    # Use a colon (:) to separate the keywords
+        | ITEM | FILTER | OPTION | KEYWORDS |
+        | CPU  | Brand  | Intel  | Intel    |
 
 # TODO: Add checking for items webpages

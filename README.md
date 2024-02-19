@@ -1,29 +1,97 @@
-# :open_book: Automate course with Marina Leitman and Alexey Ternov (Portnov Computer School)
+# :snake: Simple QA automate framework for eBay website
 
-Here, I will upgrade my comments and progress related to homework tasks.
+![eBay logo](/readme_makeup/images/eBay_logo.png)
 
-_UPDATED 02/08/2024 4:45pm_
+This project is an illustrative one and does not claim that the code is correct and optimal. The main purpose is to demonstrate my mastery of this or that technology.
 
----
+This framework consists of 4 main parts:
 
-## Full navigation for the lessons:
+- Header navigation testing
+- Flyout main menu testing
+- Search results testing
+- Filter results testing
 
-### [Case 1](/case_1/readme.md) January 11, 2024 (Thursday)
+QA framework has been implemented using Selenium and Behave (BDD)
 
-### [Case 2](/case_2/readme.md) January 15, 2024 (Monday)
+Preparing to run tests (Linux/Unix/Mac).
+Execute the following command in your terminal (you can copy and paste commands below). Depending on the distribution, some commands may require you to add "sudo" at the beginning of the command and enter an administrator password.
 
-### [Case 3](/case_3/readme.md) January 18, 2024 (Thursday)
+Create a directory for this project e.g. in your home directory "/home/<user>/ebay_automation_tests"
 
-### [Case 4](/case_4/readme.md) January 22, 2024 (Monday)
+```bash
+$ mkdir ~/ebay_automation_tests && cd ~/ebay_automation_tests
+```
 
-### [Case 5](/case_5/readme.md) January 25, 2024 (Thursday)
+Check if you have Python installed and which version you have:
 
-### [Case 6](/case_6/readme.md) January 29, 2024 (Monday)
+```bash
+$ which python3 && python3 --version
+```
 
-### [Case 7](/case_7/readme.md) February 1, 2024 (Thursday)
+If you do not see the Python version (should be 3.x.x) and the message (python3 not found), install the python:
 
-### [Case 8](/case_8/readme.md) February 5, 2024 (Monday)
+```bash
+# for Linux Debian/Ubuntu family
+$ sudo apt update && apt upgrade
+$ sudo apt install python3.9.12
+$ python3 --version
 
----
+# for Linux CentOS/RedHat family
+$ sudo yum update && apt upgrade
+$ sudo yum install python3.9.12
+$ python3 --version
+
+# for Mac OS X
+# install homebrew installer
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# update and upgrade installer
+$ brew update && brew upgrade
+# install python 3
+$ brew install python3.9.12
+```
+
+Install and launch the Python virtual environment
+
+```bash
+$ python -m venv ./venv
+$ source ./venv/bin/activate
+```
+
+Clone this repository:
+
+```bash
+$ git clone https://github.com/alfatetan/qa_automation_sample_ebay.git
+```
+
+Install all needed requirements:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Launch tests
+All tests scenarios contained in "features" folder.
+
+```bash
+# Go to the features folder
+$ cd features
+```
+
+Then you have different options to launch the tests
+
+```bash
+# Start specific test set
+# behave <test_set>.feature
+# e.g. start test set "search"
+$ behave search.feature
+
+# To create a report you can use "tee" command
+$ behave search.feature || tee ../reports/search_report.txt
+
+# use all test sets
+$ behave
+# or (if you want to save all test results)
+$ behave | tee ../reports/all_test_results.txt
+```
 
 ### Thank you for taking the time and attention to my work.
