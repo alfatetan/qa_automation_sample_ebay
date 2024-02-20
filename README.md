@@ -1,6 +1,8 @@
 # :snake: Simple QA automate framework for eBay website
 
-![eBay logo](/readme_makeup/images/eBay_logo.png)
+![eBay logo](/readme_makeup/images/ebay-icon-logo.png)
+
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=Ebay+automation+;Second+line+of+text)](https://git.io/typing-svg)
 
 This project is an illustrative one and does not claim that the code is correct and optimal. The main purpose is to demonstrate my mastery of this or that technology.
 
