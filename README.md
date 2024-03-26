@@ -16,6 +16,28 @@ QA framework has been implemented using Selenium and Behave (BDD)
 Preparing to run tests (Linux/Unix/Mac).
 Execute the following command in your terminal (you can copy and paste commands below). Depending on the distribution, some commands may require you to add "sudo" at the beginning of the command and enter an administrator password.
 
+## Use an installation file
+- Clone repository on your computer:
+
+```bash
+$ git clone https://github.com/alfatetan/qa_automation_sample_ebay.git && cd qa_automation_sample_ebay
+```
+
+- Start installation file:
+
+```bash
+# If you use MacOS
+$ source install_macos.sh
+
+# If you use Ubuntu / Debian Linux
+$ sudo source install_ubuntu.sh
+
+# if you use CentOS / RedHat Linux
+$ sudo source install_centos.sh
+```
+
+## Or Install it Manually
+
 Create a directory for this project e.g. in your home directory "/home/<user>/ebay_automation_tests"
 
 ```bash
@@ -86,7 +108,7 @@ Then you have different options to launch the tests
 $ behave search.feature
 
 # To create a report you can use "tee" command
-$ behave search.feature || tee ../reports/search_report.txt
+$ behave search.feature | tee ../reports/search_report.txt
 
 # use all test sets
 $ behave
